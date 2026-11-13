@@ -47,7 +47,8 @@
           color-scheme:light;
         }
       }
-      html,body{ height:100%; }
+      html,body{ height:100%; min-height:100dvh; }
+      html{ background:linear-gradient(160deg, var(--bg2), var(--bg)); }
       body{
         margin:0; overflow:hidden; background:var(--bg); color:var(--ink);
         font-family:"Noto Sans SC", system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
@@ -1393,12 +1394,12 @@
           loginEl.style.display = "none";
           loginEl.classList.add("gone");
           document.body.classList.add("in");
-          setTimeout(function(){ toast("已保持登录，直接为你打开画布"); tryClipboardBubble(); }, 350);
+          setTimeout(function(){ toast("已保持登录，直接为你打开画布"); }, 350);
           return;
         }
         loginEl.classList.add("gone");
         document.body.classList.add("in");
-        setTimeout(function(){ loginEl.style.display="none"; toast("已记住登录"); tryClipboardBubble(); }, 850);
+        setTimeout(function(){ loginEl.style.display="none"; toast("已记住登录"); }, 850);
       }
       function logoutApp(){
         clearSession();
